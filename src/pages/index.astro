@@ -1,0 +1,225 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Contact from '~/components/widgets/Contact.astro';
+
+const metadata = {
+  title: 'Cyber Safe Solutions - Business Automation Agency',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book a Free Strategy Call',
+        href: '#contact',
+        icon: 'tabler:calendar',
+      },
+      { text: 'View Services', href: '#services' },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">Automate Your Revenue</span> with Smart Systems
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="font-semibold">Cyber Safe Solutions</span> builds automation that increases revenue and cuts costs. Stop
+      losing opportunities and start converting with systems that work 24/7.
+    </Fragment>
+  </Hero>
+
+  <!-- Services Section *************** -->
+
+  <Features
+    id="services"
+    tagline="Services"
+    title="Revenue-Generating Automation Solutions"
+    subtitle="We implement systems that capture revenue opportunities, recover lost deals, and eliminate costly manual processes."
+    items={[
+      {
+        title: 'Automated Lead Follow-Up',
+        description:
+          'Increase conversions with instant, personalized follow-up sequences. Turn more prospects into paying clients without lifting a finger.',
+        icon: 'tabler:target',
+      },
+      {
+        title: 'Missed-Call Revenue Recovery',
+        description:
+          'Never lose money to missed calls. Automatically text prospects immediately when you miss their call, keeping deals alive and revenue flowing.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Smart Appointment Booking',
+        description:
+          'Let clients book instantly 24/7. Eliminate scheduling friction, reduce no-shows, and fill your calendar with qualified appointments.',
+        icon: 'tabler:calendar-check',
+      },
+      {
+        title: 'Customer Reactivation Campaigns',
+        description:
+          'Recover lost revenue from dormant customers. Automated campaigns bring previous clients back and generate income from your existing database.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'AI Customer Service Automation',
+        description:
+          'Reduce support costs while improving response times. Intelligent chat systems handle inquiries, qualify leads, and book appointments automatically.',
+        icon: 'tabler:robot',
+      },
+      {
+        title: 'Pipeline & Workflow Optimization',
+        description:
+          'Eliminate revenue leaks in your sales process. Automated workflows ensure no deal falls through the cracks and every opportunity is maximized.',
+        icon: 'tabler:chart-line',
+      },
+    ]}
+  />
+
+  <!-- Process Section **************** -->
+
+  <Steps
+    id="process"
+    title="Our Process: From Strategy to Revenue Growth"
+    subtitle="We take a systematic approach to implementing automation that delivers measurable financial results."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Revenue Analysis</span>',
+        description:
+          'We identify where you are losing money and opportunities. Our audit pinpoints revenue leaks, inefficiencies, and missed conversion points.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">System Implementation</span>',
+        description:
+          'We build and deploy automation systems tailored to your revenue goals. Every workflow, message, and integration is optimized for maximum ROI.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Testing & Refinement</span>',
+        description:
+          'We rigorously test every system and track performance metrics. Data-driven optimization ensures you get the best possible conversion rates.',
+        icon: 'tabler:chart-line',
+      },
+      {
+        title: 'Step 4: <span class="font-medium">Launch & Scale</span>',
+        description:
+          'Your automation goes live with full training and documentation. We provide ongoing support to help you scale revenue while reducing costs.',
+        icon: 'tabler:rocket',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
+
+  <!-- FAQ Section ******************** -->
+
+  <FAQs
+    id="faq"
+    title="Frequently Asked Questions"
+    subtitle="Get answers to common questions about our business automation services."
+    tagline="FAQ"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'How quickly will I see results?',
+        description:
+          'Most clients see immediate improvements in response times and lead capture. Revenue impact typically becomes measurable within 2-4 weeks as automation systems optimize your conversion funnel.',
+      },
+      {
+        title: 'What kind of ROI can I expect?',
+        description:
+          'Results vary by business, but clients typically see 20-40% increases in conversion rates, recovered revenue from previously lost opportunities, and significant time savings. Some clients recover implementation costs within the first month.',
+      },
+      {
+        title: 'Do you provide training and support?',
+        description:
+          'Yes. Every implementation includes comprehensive training, video walkthroughs, and written documentation. We also provide ongoing support to help you maximize results and expand automation as you grow.',
+      },
+      {
+        title: 'Will this work with my existing systems?',
+        description:
+          'Our automation integrates with most major platforms including payment processors, calendars, email providers, and business tools. We handle all technical integration as part of our service.',
+      },
+      {
+        title: 'What if my business changes or grows?',
+        description:
+          'Automation systems are built to scale with your business. We provide ongoing support packages for clients who need adjustments, new campaigns, or system expansions as their needs evolve.',
+      },
+      {
+        title: 'Is this just for certain industries?',
+        description:
+          'Our automation works for any business that generates leads, books appointments, or follows up with customers. We have helped service businesses, consultants, coaches, agencies, and e-commerce companies increase revenue.',
+      },
+    ]}
+  />
+
+  <!-- Contact Section **************** -->
+
+  <Contact
+    id="contact"
+    title="Ready to Increase Revenue and Cut Costs?"
+    subtitle="Book a free strategy call to discover how automation can transform your bottom line."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: 'Phone',
+      },
+    ]}
+    textarea={{
+      label: 'Tell us about your business and revenue goals',
+      name: 'message',
+      rows: 4,
+    }}
+    disclaimer={{
+      label:
+        'By submitting this form, you agree to our Terms of Service and Privacy Policy. We will contact you within 24 hours.',
+    }}
+    description="We respond to all inquiries within 24 hours. Book your free strategy call and discover how automation can grow your revenue while reducing costs."
+  />
+
+  <!-- Final CTA Section ************** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book Your Free Strategy Call',
+        href: '#contact',
+        icon: 'tabler:calendar',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Stop Losing Money.<br class="block sm:hidden" /><span class="sm:whitespace-nowrap"
+        >Start Generating More Revenue.</span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Join businesses already using automation to capture more opportunities, close more deals, and scale efficiently.
+    </Fragment>
+  </CallToAction>
+</Layout>
