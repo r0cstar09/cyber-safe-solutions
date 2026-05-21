@@ -31,12 +31,12 @@ export const footerData = {
     {
       title: 'Services',
       links: [
-        { text: 'CRM Setup', href: '#services' },
-        { text: 'Missed-Call Text Back', href: '#services' },
+        { text: 'Lead Follow-Up Automation', href: '#services' },
+        { text: 'Missed-Call Recovery', href: '#services' },
         { text: 'Appointment Booking', href: '#services' },
-        { text: 'Lead Follow-Up', href: '#services' },
-        { text: 'Reactivation Campaigns', href: '#services' },
-        { text: 'AI Chat Automation', href: '#services' },
+        { text: 'Customer Reactivation', href: '#services' },
+        { text: 'AI Customer Service', href: '#services' },
+        { text: 'Workflow Optimization', href: '#services' },
       ],
     },
     {
