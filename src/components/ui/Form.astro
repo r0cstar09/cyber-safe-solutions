@@ -5,16 +5,15 @@ import Button from '~/components/ui/Button.astro';
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
 ---
 
-<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
-  <input type="hidden" name="form-name" value="contact" />
-  <input type="hidden" name="subject" value="New Contact Form Submission from Cyber Safe Solutions Website" />
+<form action="https://api.web3forms.com/submit" method="POST">
+  <!-- Replace with your Web3Forms Access Key -->
+  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+  <input type="hidden" name="subject" value="New Contact from Cyber Safe Solutions Website" />
+  <input type="hidden" name="from_name" value="Cyber Safe Solutions Website" />
+  <input type="hidden" name="redirect" value="https://cybersafesolutions.ca/success" />
   
-  <!-- Honeypot for spam protection -->
-  <div style="display: none;">
-    <label>
-      Don't fill this out if you're human: <input name="bot-field" />
-    </label>
-  </div>
+  <!-- Honeypot Spam Protection -->
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
 
   {
     inputs &&
