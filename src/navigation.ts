@@ -20,10 +20,10 @@ export const headerData = {
     },
     {
       text: 'Contact',
-      href: '#contact',
+      href: 'https://calendly.com/johnstonejoe395/30min',
     },
   ],
-  actions: [{ text: 'Book a Free Strategy Call', href: '#contact', variant: 'primary' as const }],
+  actions: [{ text: 'Book a Free Strategy Call', href: 'https://calendly.com/johnstonejoe395/30min', variant: 'primary' as const }],
 };
 
 export const footerData = {
@@ -46,14 +46,14 @@ export const footerData = {
         { text: 'Services', href: '#services' },
         { text: 'Process', href: '#process' },
         { text: 'FAQ', href: '#faq' },
-        { text: 'Contact', href: '#contact' },
+        { text: 'Contact', href: 'https://calendly.com/johnstonejoe395/30min' },
       ],
     },
     {
       title: 'Support',
       links: [
         { text: 'FAQ', href: '#faq' },
-        { text: 'Book a Call', href: '#contact' },
+        { text: 'Book a Call', href: 'https://calendly.com/johnstonejoe395/30min' },
       ],
     },
   ],
