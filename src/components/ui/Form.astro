@@ -5,7 +5,17 @@ import Button from '~/components/ui/Button.astro';
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
 ---
 
-<form>
+<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+  <input type="hidden" name="form-name" value="contact" />
+  <input type="hidden" name="subject" value="New Contact Form Submission from Cyber Safe Solutions Website" />
+  
+  <!-- Honeypot for spam protection -->
+  <div style="display: none;">
+    <label>
+      Don't fill this out if you're human: <input name="bot-field" />
+    </label>
+  </div>
+
   {
     inputs &&
       inputs.map(
@@ -23,6 +33,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
                 id={name}
                 autocomplete={autocomplete}
                 placeholder={placeholder}
+                required
                 class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
               />
             </div>
@@ -41,6 +52,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
           name={textarea.name ? textarea.name : 'message'}
           rows={textarea.rows ? textarea.rows : 4}
           placeholder={textarea.placeholder}
+          required
           class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
         />
       </div>
@@ -55,6 +67,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
             id="disclaimer"
             name="disclaimer"
             type="checkbox"
+            required
             class="cursor-pointer mt-1 py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"
           />
         </div>
